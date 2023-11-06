@@ -19,7 +19,7 @@ class Coords(models.Model):
 class Photo(models.Model):
     data = models.ImageField(upload_to='images/', blank=True)
     title = models.CharField(max_length=255)
-    pereval = models.ForeignKey("Pereval_added", on_delete=models.CASCADE)
+    # pereval = models.ForeignKey("Pereval_added", on_delete=models.CASCADE)
 
 
 class Pereval_added(models.Model):
@@ -57,4 +57,5 @@ class Pereval_added(models.Model):
     )
 
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    coords = models.OneToOneField(Coords, on_delete=models.CASCADE)
+    coords = models.OneToOneField(Coords, on_delete=models.CASCADE, default=None)
+    photos = models.ManyToManyField(Photo)

@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('spring_level', models.CharField(choices=[('1a', '1A'), ('1b', '1B'), ('2a', '2A'), ('2b', '2B'), ('3a', '3A'), ('3b', '3B')], default='1a', max_length=2)),
                 ('summer_level', models.CharField(choices=[('1a', '1A'), ('1b', '1B'), ('2a', '2A'), ('2b', '2B'), ('3a', '3A'), ('3b', '3B')], default='1a', max_length=2)),
                 ('status', models.CharField(choices=[('new', 'новый'), ('pending', 'модератор взял в работу'), ('accepted', 'модерация завершена успешно'), ('rejected', 'модерация прошла, информация отклонена')], default='NE', max_length=8)),
-                ('coords', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='pass.coords')),
+                ('coords', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='the_pass.coords')),
             ],
         ),
         migrations.CreateModel(
@@ -55,12 +55,13 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('data', models.ImageField(blank=True, upload_to='images/')),
                 ('title', models.CharField(max_length=255)),
-                ('pereval', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pass.pereval_added')),
+                ('pereval', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                              to='the_pass.pereval_added')),
             ],
         ),
         migrations.AddField(
             model_name='pereval_added',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pass.users'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='the_pass.users'),
         ),
     ]

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'pass',
+    'the_pass',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Passes.wsgi.application'
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'HOST': os.getenv('FSTR_DB_HOST'),
 #         'PORT': os.getenv('FSTR_DB_PORT'),
-#         'NAME': 'pass',
+#         'NAME': 'postgres',
 #         'USER': os.getenv('FSTR_DB_LOGIN'),
 #         'PASSWORD': os.getenv('FSTR_DB_PASS'),
 #     }
@@ -140,3 +140,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
