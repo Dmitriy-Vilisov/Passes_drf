@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'pass',
 ]
 
 MIDDLEWARE = [
@@ -70,13 +77,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Passes.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': os.getenv('FSTR_DB_HOST'),
+#         'PORT': os.getenv('FSTR_DB_PORT'),
+#         'NAME': 'pass',
+#         'USER': os.getenv('FSTR_DB_LOGIN'),
+#         'PASSWORD': os.getenv('FSTR_DB_PASS'),
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '95241243',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

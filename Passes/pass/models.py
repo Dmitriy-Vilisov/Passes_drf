@@ -16,7 +16,6 @@ class Coords(models.Model):
     height = models.FloatField()  # пусть будет возможность отправлять дробные числа
 
 
-
 class Photo(models.Model):
     data = models.ImageField(upload_to='images/', blank=True)
     title = models.CharField(max_length=255)
