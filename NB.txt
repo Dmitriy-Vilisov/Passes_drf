@@ -1,0 +1,89 @@
+python -m venv venv
+source venv/bin/activate
+pip install django
+pip install djangorestframework
+python -m pip install Pillow
+pip install psycopg2-binary
+pip install drf-writable-nested
+pip install python-dotenv
+
+
+
+# Проверяем:
+{
+    "photos": [
+        {
+        "data": "http://vsegda-pomnim.com/uploads/posts/2022-04/1650930638_66-vsegda-pomnim-com-p-pereval-katu-yarik-gornii-foto-70.jpg",
+        "title": "qwe"
+    },
+        {
+        "data": "https://live.staticflickr.com/65535/48597231856_8b056b10b7_b.jpg",
+        "title": "qwe"
+    }
+    ],
+    "user": {
+        "email": "useremail@gmail.com",
+        "phone": 89116317211,
+        "name": "qwe",
+        "patronimic": "qwe",
+        "last_name": "qwe"
+    },
+    "coords": {
+        "latitude": 11.11,
+        "longitude": 21.21,
+        "height": 1111
+    },
+    "beauty_title": "qwe",
+    "title": "qwe",
+    "other_titles": "wqe",
+    "connect": "qwe",
+    "winter_level": "1a",
+    "autumn_level": "1a",
+    "spring_level": "1a",
+    "summer_level": "1a",
+    "status": "new"
+}
+
+Выглядит:
+HTTP 201 Created
+Allow: POST, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "id": 4,
+    "photos": [
+        {
+            "data": "http://vsegda-pomnim.com/uploads/posts/2022-04/1650930638_66-vsegda-pomnim-com-p-pereval-katu-yarik-gornii-foto-70.jpg",
+            "title": "qwe"
+        },
+        {
+            "data": "https://live.staticflickr.com/65535/48597231856_8b056b10b7_b.jpg",
+            "title": "qwe"
+        }
+    ],
+    "user": {
+        "id": 5,
+        "email": "useremail@gmail.com",
+        "phone": 89116317211,
+        "name": "qwe",
+        "patronimic": "qwe",
+        "last_name": "qwe"
+    },
+    "coords": {
+        "id": 8,
+        "latitude": 11.11,
+        "longitude": 21.21,
+        "height": 1111
+    },
+    "beauty_title": "qwe",
+    "title": "qwe",
+    "other_titles": "wqe",
+    "connect": "qwe",
+    "add_time": "2023-11-06T21:13:11.180347Z",
+    "winter_level": "1a",
+    "autumn_level": "1a",
+    "spring_level": "1a",
+    "summer_level": "1a",
+    "status": "new"
+}

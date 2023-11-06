@@ -15,7 +15,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from django.urls import path, include
 from the_pass.views import PerevalViewSet, Pereval_addedAPICreate
 from rest_framework import routers
@@ -27,5 +26,5 @@ router.register(r'the_pass', PerevalViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('the_pass.urls')),
-    path('api/v1/', include(router.urls))
+    path('api/v1/', include(router.urls))  # тут проверяем
 ]
