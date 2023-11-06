@@ -5,6 +5,8 @@ pip install djangorestframework
 python -m pip install Pillow
 pip install psycopg2-binary
 pip install drf-writable-nested
+pip install django-filter
+
 pip install python-dotenv
 
 

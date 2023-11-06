@@ -25,8 +25,8 @@ class PhotoSerializer(serializers.ModelSerializer):
 
 class Pereval_addedSerializer(WritableNestedModelSerializer):
     photos = PhotoSerializer(many=True)
-    user = UserSerializer()
     coords = CoordsSerializer()
+    user = UserSerializer()
 
     class Meta:
         model = Pereval_added
@@ -53,10 +53,12 @@ class Pereval_addedSerializer(WritableNestedModelSerializer):
             title = photo_data.pop('title')
             Photo.objects.create(data=data, title=title, pereval=pereval)
 
+        return pereval
+
 
 class PerevalSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
     coords = CoordsSerializer()
-    # photo = PhotoSerializer()
+    photos = PhotoSerializer(many=True)
     user = UserSerializer()
 
     class Meta:

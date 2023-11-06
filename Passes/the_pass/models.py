@@ -28,7 +28,6 @@ class Pereval_added(models.Model):
     other_titles = models.CharField(max_length=255)
     connect = models.TextField()
     add_time = models.DateTimeField(auto_now_add=True)
-
     winter_level = models.CharField(
         max_length=2,
         choices=DIFFICULTY_LEVEL,
@@ -49,7 +48,6 @@ class Pereval_added(models.Model):
         choices=DIFFICULTY_LEVEL,
         default='1a',
     )
-
     status = models.CharField(
         max_length=8,
         choices=STATUS,
