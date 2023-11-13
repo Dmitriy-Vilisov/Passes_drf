@@ -16,33 +16,33 @@ pip install python-dotenv
     "photos": [
         {
         "data": "http://vsegda-pomnim.com/uploads/posts/2022-04/1650930638_66-vsegda-pomnim-com-p-pereval-katu-yarik-gornii-foto-70.jpg",
-        "title": "qwe"
+        "title": "спуск"
     },
         {
         "data": "https://live.staticflickr.com/65535/48597231856_8b056b10b7_b.jpg",
-        "title": "qwe"
+        "title": "подьем"
     }
     ],
     "user": {
         "email": "useremail@gmail.com",
         "phone": 89116317211,
-        "name": "qwe",
-        "patronimic": "qwe",
-        "last_name": "qwe"
+        "name": "Иван",
+        "patronimic": "Иванович",
+        "last_name": "Иванов"
     },
     "coords": {
         "latitude": 11.11,
         "longitude": 21.21,
-        "height": 1111
+        "height": 1231
     },
-    "beauty_title": "qwe",
-    "title": "qwe",
-    "other_titles": "wqe",
-    "connect": "qwe",
-    "winter_level": "1a",
-    "autumn_level": "1a",
-    "spring_level": "1a",
-    "summer_level": "1a",
+    "beauty_title": "перевал",
+    "title": "Альпы",
+    "other_titles": "Горы",
+    "connect": "Огромная гора",
+    "winter_level": "3a",
+    "autumn_level": "3a",
+    "spring_level": "3a",
+    "summer_level": "2a",
     "status": "new"
 }
 
