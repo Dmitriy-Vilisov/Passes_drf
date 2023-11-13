@@ -4,16 +4,16 @@
 
 <h2 align="center">  Модели:</h2>
 
-<h4 align="center">**_- Users_**</h4>
+<h4 align="center"> - Users</h4>
 <h4 align="center">(содержит информацию о пользователе: email, телефон, имя, отчество, фамилию).</h4>
 
-<h4 align="center">**_- Coords_** </h4>
+<h4 align="center"> - Coords </h4>
 <h4 align="center">содержит информацию о координатах перевала: ширину, долготу, высоту</h4>
 
-<h4 align="center">**_- Photo_** </h4>
+<h4 align="center"> - Photo </h4>
 <h4 align="center">содержит информацию о фото</h4>
 
-<h4 align="center">**_- Pereval_added_** </h4>
+<h4 align="center"> - Pereval_added</h4>
 <h4 align="center">содержит информацию о перевале: название, описание, время добавления, уровень сложности; ссылку на 
 пользователя, добавившего этот перевал; координаты; фото</h4>
 ****
@@ -31,7 +31,7 @@
 * PATCH `/submitData/<id>` - изменение информации о перевале (менять данные пользователя нельзя)
 
 ****
-<h2 align="center">**Принимает JSON-документ следующего формата:**</h2>
+**Принимает JSON-документ следующего формата:**
 ```
 {
     "photos": [
@@ -69,9 +69,12 @@
 ```
 ---
 <h2 align="center">Установка:</h2>
+
 1) скачать проект https://github.com/Dmitriy-Vilisov/Passes_drf.git
 2) создать и активировать виртуальное окружение
+
 `python -m venv venv`
+
 `source venv/bin/activate`
 3) установить следующие библиотеки:
 
