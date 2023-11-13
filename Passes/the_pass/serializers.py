@@ -25,8 +25,8 @@ class PhotoSerializer(serializers.ModelSerializer):
 
 class Pereval_addedSerializer(WritableNestedModelSerializer):
     photos = PhotoSerializer(many=True)
-    coords = CoordsSerializer()
     user = UserSerializer()
+    coords = CoordsSerializer()
 
     class Meta:
         model = Pereval_added

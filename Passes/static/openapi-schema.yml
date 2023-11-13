@@ -1,0 +1,200 @@
+openapi: 3.0.3
+info:
+  title: Информация о перевалах - OpenAPI спецификация
+  description: Создает и изменяет информацию о перевалах. Также, позволяет посмотреть информацию об отдельном перевале или отфильтровать перевалы по почте пользователя.
+  version: 0.0.1
+
+servers:
+  - url: http://127.0.0.1:8000/
+    description: dev server
+
+tags:
+  - name: pereval
+    description: Все о перевалах
+
+paths:
+  /submitData/:
+    post:
+      tags:
+        - pereval
+      summary: Создать новый перевал
+      operationId: addPereval
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pereval_added'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pereval_added'
+        '405':
+          description: Invalid input
+        '400':
+          description: Bad Request
+
+    get:
+      tags:
+        - pereval
+      summary: Получить список перевалов с фильтром по почте
+      description: submitData/?user__email={email}/
+      operationId: findPerevalsByEmail
+      parameters:
+        - name: email
+          in: query
+          description: Для фильтрации нужна почта.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pereval_added'
+        '400':
+          description: Invalid status value
+
+  /submitData/{id}/:
+    get:
+      tags:
+        - pereval
+      summary: Найти перевал по id
+      description: Возвращает полную информацию о перевале
+      operationId: findPerevalById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pereval_added'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Not Found
+
+    patch:
+      tags:
+        - pereval
+      summary: Редактировать информацию о перевале
+      description: Нельзя изменить информацию о пользователе
+      operationId: updatePerevalById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: Перевал отредактирован
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pereval_added'
+        '400':
+          description: Не удалось отредактировать запись
+        '404':
+          description: Перевал не найден
+
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        phone:
+          type: number
+        name:
+          type: string
+        patronimic:
+          type: string
+        last_name:
+          type: string
+
+
+    Coords:
+      type: object
+      properties:
+        id:
+          type: integer
+        latitude:
+          type: number
+        longitude:
+          type: number
+        height:
+          type: integer
+
+    Photo:
+      type: object
+      properties:
+        id:
+          type: integer
+        data:
+          type: string
+        title:
+          type: string
+        pereval:
+          type: integer
+
+    Pereval_added:
+      type: object
+      properties:
+        id:
+          type: integer
+        beauty_title:
+          type: string
+        title:
+          type: string
+        other_titles:
+          type: string
+        connect:
+          type: string
+        add_time:
+          type: string
+          format: date-time
+        winter_level:
+          type: string
+        autumn_level:
+          type: string
+        spring_level:
+          type: string
+        summer_level:
+          type: string
+        status:
+          type: string
+          enum:
+            - new
+            - pending
+            - accepted
+            - rejected
+        user:
+          $ref: '#/components/schemas/User'
+        coords:
+          $ref: '#/components/schemas/Coords'

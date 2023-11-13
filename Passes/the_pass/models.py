@@ -11,9 +11,9 @@ class Users(models.Model):
 
 
 class Coords(models.Model):
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    height = models.IntegerField()
+    latitude = models.FloatField()   # широта
+    longitude = models.FloatField()  # долгота
+    height = models.IntegerField()   # высота
 
 
 class Photo(models.Model):
@@ -28,6 +28,7 @@ class Pereval_added(models.Model):
     other_titles = models.CharField(max_length=255)
     connect = models.TextField()
     add_time = models.DateTimeField(auto_now_add=True)
+
     winter_level = models.CharField(
         max_length=2,
         choices=DIFFICULTY_LEVEL,
